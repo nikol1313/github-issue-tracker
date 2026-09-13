@@ -14,7 +14,7 @@
             <p>Create, Search, Delete</p>
         </header>
         <form id="task-form">
-            <input type="text" id="input-bar" name="task-name" placeholder="Enter Task Name">
+            <input type="text" id="input-bar" name="task-name" placeholder="Enter Task Name" required>
             <label for="desc">Description</label>
             <textarea id="desc" name="desc" rows="4" cols="50"></textarea>
 
@@ -40,6 +40,19 @@
     <button type="submit">Create Task</button>
 
         </form>
+
+        
+<section>
+    <h2>Search Task:</h2>
+    <input type="text" placeholder="Search task" id="search-input" >
+    <div id="searched"></div> 
+</section> 
+
+
+<section>
+    <h2>Current Tasks:</h2>
+    <div id="display"></div>
+</section>
     </main>
 </body>
 </html>
