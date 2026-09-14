@@ -1,14 +1,10 @@
 const form = document.querySelector("#task-form");
 const taskArray = [];
-<<<<<<< HEAD
-const display = document.querySelector("#display");
-=======
 // empty to store
 const display = document.querySelector("#display");
 const search = document.querySelector("#search-input");
 // empty for result
 const searched = document.querySelector("#searched");
->>>>>>> 8de0747 (added searc/filter logic)
 
 let nextId = 1;
 
@@ -47,10 +43,7 @@ function renderTasks() {
 }
 
 
-<<<<<<< HEAD
-=======
 // delete task
->>>>>>> 8de0747 (added searc/filter logic)
 display.addEventListener("click", (foo) => {
     // we dont listen to buttonB directly cuz it doesnt exist at first
     if (foo.target.classList.contains("deleteB")) {
@@ -70,8 +63,6 @@ display.addEventListener("click", (foo) => {
 });
 
 //search/filter
-<<<<<<< HEAD
-=======
 
 search.addEventListener("input", (foo) => {
     const searchedT = foo.target.value.trim().toLowerCase();
@@ -97,4 +88,3 @@ search.addEventListener("input", (foo) => {
         };
     };
 });
->>>>>>> 8de0747 (added searc/filter logic)
