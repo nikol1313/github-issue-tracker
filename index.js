@@ -1,12 +1,15 @@
 const form = document.querySelector("#task-form");
-const taskArray = [];
+let taskArray = JSON.parse(localStorage.getItem("tasks")) || [];
 // empty to store
 const display = document.querySelector("#display");
 const search = document.querySelector("#search-input");
 // empty for result
 const searched = document.querySelector("#searched");
 
-let nextId = 1;
+// after every refresh picks hishest id and adds one to prevent dup.
+let nextId = taskArray.length
+    ? Math.max(...taskArray.map(task => task.id)) + 1
+    : 1;
 
 form.addEventListener("submit", (foo) => {
     foo.preventDefault();
@@ -21,11 +24,11 @@ form.addEventListener("submit", (foo) => {
     };
 
     taskArray.push(load);
-
+    localStorage.setItem("tasks", JSON.stringify(taskArray));
     renderTasks();
+
     form.reset();
 });
-
 
 function renderTasks() {
     display.innerHTML = "";
@@ -56,6 +59,7 @@ display.addEventListener("click", (foo) => {
         // findIndex return -1, so if not equal -1 we found the element.
         if (index !== -1) {
             taskArray.splice(index, 1);
+            localStorage.setItem("tasks", JSON.stringify(taskArray));
         }
 
         renderTasks();
@@ -88,3 +92,5 @@ search.addEventListener("input", (foo) => {
         };
     };
 });
+
+renderTasks();
