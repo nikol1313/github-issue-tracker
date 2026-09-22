@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github issue tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="./js/events.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Github Issue Tracker</h1>
+            <p>Search repository, find issue</p>
+        </header>
+<div id="search-container">
+    <form id="repo-form">
+        <input
+        type="text"
+        id="repo-input"
+        placeholder="owner/repository"
+        required>
+    <button type="submit" id="search-repo">Search</button>
+    </form>
+
+
+        <section id="issue-section">
+        <input type="text"
+        placeholder="search issues"
+        id="issue-input"
+        >
+        <input type="radio" id="open" name="status" value="open" checked>
+        <label for="open">Open</label>
+
+        <input type="radio" id="closed" name="status" value="closed">
+        <label for="closed">Closed</label>
+
+        <input type="radio" id="all" name="status" value="all">
+        <label for="all">All</label>
+        </section>
+</div>
+<h2 class="section-title">Repository</h2>
+<div id="display-repo"></div>
+
+<h2 class="section-title">Issues</h2>
+<div id="display-issue"></div>
+
+    </main>
+</body>
+</html>
